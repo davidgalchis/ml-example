@@ -38,6 +38,7 @@
         }
     },
     "repos": {
+        "s3": "https://github.com/cloudkommand/s3",
         "dynamodb": "https://github.com/cloudkommand/dynamodb",
         "lambda": "https://github.com/cloudkommand/lambda",
         "iam": "https://github.com/cloudkommand/iam"
