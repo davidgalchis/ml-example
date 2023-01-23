@@ -10,6 +10,7 @@
             "type": "@lambda.function",
             "policies": ["@policy"],
             "container": true,
+            "memory_size": 10000,
             "timeout": 300,
             "login_to_dockerhub": true,
             "environment_variables": {
