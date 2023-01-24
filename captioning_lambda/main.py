@@ -70,7 +70,8 @@ def generate_caption(image: Image) -> str:
 @tracer.capture_method(capture_response=False)
 def persist_caption(key: str, caption: str) -> None:
     captions_table.put_item(Item={
-        "key": key,
+        "pkey": key,
+        "skey": "-",
         "caption": caption,
         "timestamp": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
     })

@@ -1,10 +1,19 @@
 {
     "components": {
         "caption_table": {
-            "type": "@dynamodb.table"
+            "type": "@dynamodb.table",
+            "skey_name": "skey"
         },
         "picture_bucket": {
-            "type": "@s3.bucket"
+            "type": "@s3.bucket",
+            "notification_configuration": [
+                {
+                    "arn": "@captioning_lambda:props.arn",
+                    "events": [
+                        "s3:ObjectCreated:*"
+                    ]
+                }
+            ]
         },
         "captioning_lambda": {
             "type": "@lambda.function",
@@ -12,7 +21,6 @@
             "container": true,
             "memory_size": 10000,
             "timeout": 300,
-            "login_to_dockerhub": true,
             "environment_variables": {
                 "TABLE_NAME": "@caption_table:props.name"
             }
