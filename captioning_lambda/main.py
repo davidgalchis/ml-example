@@ -71,7 +71,6 @@ def generate_caption(image: Image) -> str:
 def persist_caption(key: str, caption: str) -> None:
     captions_table.put_item(Item={
         "pkey": key,
-        "skey": "-",
         "caption": caption,
         "timestamp": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
     })

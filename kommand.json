@@ -1,8 +1,7 @@
 {
     "components": {
         "caption_table": {
-            "type": "@dynamodb.table",
-            "skey_name": "skey"
+            "type": "@dynamodb.table"
         },
         "picture_bucket": {
             "type": "@s3.bucket",
