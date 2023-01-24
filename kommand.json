@@ -12,6 +12,9 @@
             "container": true,
             "memory_size": 10000,
             "timeout": 300,
+            "Codebuild Project": {
+                "build_container_size": "2xlarge"
+            },
             "environment_variables": {
                 "TABLE_NAME": "@caption_table:props.name"
             }
