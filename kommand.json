@@ -16,7 +16,7 @@
                 }
             ]
         },
-        "captioning_lambda": {
+        "captioning_lambda": { 
             "type": "@lambda.function",
             "policies": ["@policy"],
             "container": true,
