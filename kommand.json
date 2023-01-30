@@ -28,13 +28,8 @@
             "environment_variables": {
                 "TABLE_NAME": "@caption_table:props.name"
             },
-            "resource_permissions": [
-                {
-                    "StatementId": "S3TriggerPermissions",
-                    "Action": "lambda:InvokeFunction",
-                    "Principal": "s3.amazonaws.com",
-                    "SourceArn": "@picture_bucket:props.arn"
-                }
+            "allowed_invoke_arns": [
+                "@picture_bucket:props.all_objects_arn"
             ]
         },
         "policy": {
