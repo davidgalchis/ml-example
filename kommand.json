@@ -6,16 +6,6 @@
         "picture_bucket": {
             "type": "@s3.bucket"
         },
-        "picture_bucket_notification": {
-            "type": "@s3.bucket_notification",
-            "bucket_name": "@picture_bucket:props.name",
-            "notification_configuration": [
-                {
-                    "arn": "@captioning_lambda:props.arn",
-                    "events": "s3:ObjectCreated:*"
-                }
-            ]
-        },
         "captioning_lambda": { 
             "type": "@lambda.function",
             "policies": ["@policy"],
