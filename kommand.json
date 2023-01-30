@@ -11,20 +11,15 @@
             "bucket_name": "@picture_bucket:props.name",
             "notification_configuration": [
                 {
-                    "arn": "@captioning_lambda:props.arn",
+                    "arn": "@tutorial_lambda:props.arn",
                     "events": ["s3:ObjectCreated:*"]
                 }
             ]
         },
-        "captioning_lambda": { 
+        "tutorial_lambda": { 
             "type": "@lambda.function",
             "policies": ["@policy"],
-            "container": true,
-            "memory_size": 10000,
-            "timeout": 300,
-            "Codebuild Project": {
-                "build_container_size": "2xlarge"
-            },
+            "timeout": 10,
             "environment_variables": {
                 "TABLE_NAME": "@caption_table:props.name"
             },
