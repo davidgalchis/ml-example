@@ -29,7 +29,7 @@
                 "TABLE_NAME": "@caption_table:props.name"
             },
             "allowed_invoke_arns": [
-                "@picture_bucket:props.all_objects_arn"
+                "@picture_bucket:props.arn"
             ]
         },
         "policy": {
